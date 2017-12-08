@@ -1,0 +1,86 @@
+[acadgild@localhost jarfiles]$ hadoop jar UnitSoldCompany.jar /user/acadgild/television.txt /user/acadgild/UnitSoldCompanyout
+17/12/08 15:41:41 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/12/08 15:41:43 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+17/12/08 15:41:44 WARN mapreduce.JobSubmitter: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+17/12/08 15:41:45 INFO input.FileInputFormat: Total input paths to process : 1
+17/12/08 15:41:45 INFO mapreduce.JobSubmitter: number of splits:1
+17/12/08 15:41:45 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1512727149756_0002
+17/12/08 15:41:46 INFO impl.YarnClientImpl: Submitted application application_1512727149756_0002
+17/12/08 15:41:46 INFO mapreduce.Job: The url to track the job: http://localhost:8088/proxy/application_1512727149756_0002/
+17/12/08 15:41:46 INFO mapreduce.Job: Running job: job_1512727149756_0002
+17/12/08 15:42:01 INFO mapreduce.Job: Job job_1512727149756_0002 running in uber mode : false
+17/12/08 15:42:01 INFO mapreduce.Job:  map 0% reduce 0%
+17/12/08 15:42:11 INFO mapreduce.Job:  map 100% reduce 0%
+17/12/08 15:42:23 INFO mapreduce.Job:  map 100% reduce 100%
+17/12/08 15:42:23 INFO mapreduce.Job: Job job_1512727149756_0002 completed successfully
+17/12/08 15:42:23 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=254
+		FILE: Number of bytes written=213335
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=848
+		HDFS: Number of bytes written=38
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=8529
+		Total time spent by all reduces in occupied slots (ms)=7856
+		Total time spent by all map tasks (ms)=8529
+		Total time spent by all reduce tasks (ms)=7856
+		Total vcore-seconds taken by all map tasks=8529
+		Total vcore-seconds taken by all reduce tasks=7856
+		Total megabyte-seconds taken by all map tasks=8733696
+		Total megabyte-seconds taken by all reduce tasks=8044544
+	Map-Reduce Framework
+		Map input records=18
+		Map output records=16
+		Map output bytes=216
+		Map output materialized bytes=254
+		Input split bytes=115
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=5
+		Reduce shuffle bytes=254
+		Reduce input records=16
+		Reduce output records=5
+		Spilled Records=32
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=230
+		CPU time spent (ms)=1620
+		Physical memory (bytes) snapshot=271527936
+		Virtual memory (bytes) snapshot=4113723392
+		Total committed heap usage (bytes)=137498624
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=733
+	File Output Format Counters 
+		Bytes Written=38
+[acadgild@localhost jarfiles]$ hadoop fs -ls /user/acadgild/UnitSoldCompanyout
+17/12/08 15:43:49 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+-rw-r--r--   1 acadgild supergroup          0 2017-12-08 15:42 /user/acadgild/UnitSoldCompanyout/_SUCCESS
+-rw-r--r--   1 acadgild supergroup         38 2017-12-08 15:42 /user/acadgild/UnitSoldCompanyout/part-r-00000
+
+[acadgild@localhost jarfiles]$ hadoop fs -cat /user/acadgild/UnitSoldCompanyout/part-r-00000
+17/12/08 15:46:14 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Akai	1
+Lava	3
+Onida	3
+Samsung	7
+Zen	2
+[acadgild@localhost jarfiles]$ 
+
